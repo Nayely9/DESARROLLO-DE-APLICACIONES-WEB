@@ -1,0 +1,112 @@
+/*Fuente general y centrado*/
+body {
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    background-color: lavender;
+    margin: 30px;        /*Margen agregado*/
+    padding: 0;
+}
+
+/*Encabezado principal*/
+h1 {
+    background-color: steelblue;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/*Encabezados secundarios*/
+h2 {
+    color: darkslateblue;
+}
+
+h3 {
+    color: mediumslateblue;
+}
+
+/*Párrafos*/
+p {
+    font-size: 18px;
+    color: black;
+}
+
+/*Menú de navegación*/
+nav ul {
+    background-color: slateblue;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 3px solid midnightblue;
+    border-radius: 10px;
+}
+
+/*Enlaces*/
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*LISTAS CENTRADAS*/
+ul, ol {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: left; /*Para que este en orden*/
+}
+
+/*Imagen y video centrados*/
+img, video {
+    display: block;
+    margin: 20px auto;
+}
+
+/*Tabla centrada*/
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+table, th, td {
+    border: 2px solid navy;
+}
+
+th {
+    background-color: lightsteelblue;
+}
+
+td {
+    background-color: aliceblue;
+    padding: 8px;
+}
+
+/*Formulario centrado*/
+form {
+    border: 3px solid royalblue;
+    background-color: white;
+    width: 320px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+input, button {
+    width: 90%;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+/*Botón*/
+button {
+    background-color: mediumblue;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: navy;
+}

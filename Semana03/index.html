@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Semana 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenidos a mi Página Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#seccion1">Inicio</a></li>
+                <li><a href="#seccion2">Galería</a></li>
+                <li><a href="#formulario">Formulario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="seccion1">
+            <h2>Sobre el Proyecto</h2>
+            <p>
+                <strong><em>Esta página fue creada para aprender a utilizar HTML y 
+                CSS básico como parte de la tarea de la semana 3.</strong></em>
+            </p>
+
+            <article>
+                <h3><strong>Definición</strong></h3>
+                <p>HTML y CSS son las bases del desarrollo web. 
+                HTML (HyperText Markup Language) se utiliza para estructurar el contenido de una página, 
+                definiendo elementos como títulos, párrafos, listas o enlaces. CSS (Cascading Style Sheets) 
+                complementa a HTML al encargarse del diseño y la presentación visual, permitiendo aplicar colores, 
+                tipografías, márgenes y estilos responsivos. En conjunto, ambos lenguajes permiten crear páginas web claras, 
+                organizadas y atractivas, combinando la estructura con la apariencia.</p>
+            </article>
+        </section>
+
+        <section id="seccion2">
+            <h2>Multimedia</h2>
+
+            <h3>Imagen</h3>
+            <img src="Imagen1.jpeg" alt="Imagen de ejemplo" width="300">
+
+            <h3>Video</h3>
+            <video src="Video1.mp4" controls width="350"></video>
+        </section>
+
+        <section>
+            <h2>Listas</h2>
+
+            <h3>Lista Ordenada</h3>
+            <ol>
+                <li>Numero 1</li>
+                <li>Numero 2</li>
+                <li>Numero 3</li>
+            </ol>
+
+            <h3>Lista Desordenada</h3>
+            <ul>
+                <li>Elemento A</li>
+                <li>Elemento B</li>
+                <li>Elemento C</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tabla de Datos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Juan</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>María</td>
+                        <td>19</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="formulario">
+            <h2>Formulario de Contacto</h2>
+
+            <form action="#">
+                <label>Nombre:</label><br>
+                <input type="text" name="nombre" required><br><br>
+
+                <label>Correo:</label><br>
+                <input type="email" name="correo" required><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Enlace Externo</h2>
+            <a href="https://www.google.com" target="_blank">Ir a Google</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Semana 3 - Nayely Tumbaco </p>
+    </footer>
+
+</body>
+</html>

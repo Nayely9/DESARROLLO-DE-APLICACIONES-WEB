@@ -1,0 +1,70 @@
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #f6f4f8; 
+}
+
+header {
+    background-color: #e8def8; 
+    color: #0d0d0e;
+}
+
+.btn-primary {
+    background-color: #ec6ad7; 
+    border: none;
+    color: #ffffff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ec6ad7;
+    transform: scale(1.05);
+}
+
+.card {
+    border-radius: 18px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    color: #18161a;
+}
+
+.card-text {
+    color: #161414;
+}
+
+.navbar {
+    font-family: "Times New Roman", Times, serif;
+}
+
+form {
+    background-color: #fdfbff;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+footer {
+    background-color: #eae6f3;
+}
+
+footer a {
+    text-decoration: none;
+    color: #6a5d7b;
+}
+
+footer a:hover {
+    color: #b8a4d8;
+}
+
+@media (max-width: 576px) {
+    body {
+        background-color: #f2eef9;
+    }
+}

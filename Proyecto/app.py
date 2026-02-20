@@ -1,18 +1,26 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Página principal
 @app.route('/')
 def inicio():
-    return 'Bienvenido al Sistema de Citas Médicas – Clínica XYZ'
+    return render_template('index.html')
 
+# Página acerca de
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+# Ruta dinámica cita
 @app.route('/cita/<paciente>')
 def cita(paciente):
-    return f'Bienvenido, {paciente}. Tu cita médica está en proceso.'
+    return render_template('cita.html', paciente=paciente)
 
+# Ruta dinámica usuario
 @app.route('/usuario/<nombre>')
 def usuario(nombre):
-    return f'Bienvenido al sistema, {nombre}.'
+    return render_template('usuario.html', nombre=nombre)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 

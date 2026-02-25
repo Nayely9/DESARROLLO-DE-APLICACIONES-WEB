@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Clínica XYZ</title>
+    <title>Clínica - Sistema</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
-    <header>
-        <h1>Clínica XYZ - Sistema de Citas Médicas</h1>
-    </header>
+<header>
+    <h1>Clínica - Sistema de Gestión</h1>
+</header>
 
-    <nav>
-        <a href="/">Inicio</a>
-        <a href="/about">Acerca de</a>
-        <a href="/cita/Juan">Ejemplo Cita</a>
-        <a href="/usuario/Nayely">Usuario</a>
-    </nav>
+<nav>
+    <a href="/">Inicio</a>
+    <a href="/medicamentos">Medicamentos</a>
+    <a href="/agregar">Agregar</a>
+</nav>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+<main>
+    {% block content %}{% endblock %}
+</main>
 
-    <footer>
-        <p>2026 Clínica XYZ - Proyecto Flask</p>
-    </footer>
+<footer>
+    <p> 2026 Clínica</p>
+</footer>
 
 </body>
 </html>

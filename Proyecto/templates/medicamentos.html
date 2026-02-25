@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Inventario de Medicamentos</h2>
+
+<a href="/agregar">Agregar Nuevo Medicamento</a>
+
+<br><br>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+    <th>Proveedor</th>
+    <th>Acciones</th>
+</tr>
+
+{% for m in medicamentos %}
+<tr>
+    <td>{{ m.get_id() }}</td>
+    <td>{{ m.get_nombre() }}</td>
+    <td>{{ m.get_cantidad() }}</td>
+    <td>{{ m.get_precio() }}</td>
+    <td>{{ m.get_proveedor() }}</td>
+    <td>
+        <a href="/editar/{{ m.get_id() }}">Editar</a> |
+        <a href="/eliminar/{{ m.get_id() }}">Eliminar</a>
+    </td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

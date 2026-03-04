@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Clínica - Sistema</title>
+    <title>Clínica - Sistema de Gestión</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -14,14 +14,16 @@
     <a href="/">Inicio</a>
     <a href="/medicamentos">Medicamentos</a>
     <a href="/agregar">Agregar</a>
+    <a href="/about">Sobre Nosotros</a>
 </nav>
 
 <main>
-    {% block content %}{% endblock %}
+    {% block content %}
+    {% endblock %}
 </main>
 
 <footer>
-    <p> 2026 Clínica</p>
+    2026 Clínica
 </footer>
 
 </body>

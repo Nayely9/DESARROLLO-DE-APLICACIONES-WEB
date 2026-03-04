@@ -5,6 +5,7 @@ def conectar():
     conexion.row_factory = sqlite3.Row
     return conexion
 
+
 def crear_tablas():
     conexion = conectar()
     cursor = conexion.cursor()

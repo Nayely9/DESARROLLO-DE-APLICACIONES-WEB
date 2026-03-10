@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, Response
 from database import conectar, crear_tablas
 from models import InventarioClinica
+from conexion.conexion import conectar_mysql
 import json
 import csv
 import io
@@ -140,6 +141,43 @@ def exportar_csv():
     )
     response.headers["Content-Disposition"] = "attachment; filename=medicamentos.csv"
     return response
+
+
+@app.route("/usuarios_mysql")
+def usuarios_mysql():
+    conexion = conectar_mysql()
+    cursor = conexion.cursor(dictionary=True)
+
+    cursor.execute("SELECT * FROM usuarios")
+    usuarios = cursor.fetchall()
+
+    conexion.close()
+
+    return render_template("usuarios_mysql.html", usuarios=usuarios)
+
+
+@app.route("/agregar_usuario", methods=["GET", "POST"])
+def agregar_usuario():
+    if request.method == "POST":
+        nombre = request.form["nombre"]
+        mail = request.form["mail"]
+        password = request.form["password"]
+
+        conexion = conectar_mysql()
+        cursor = conexion.cursor()
+
+        cursor.execute(
+            "INSERT INTO usuarios (nombre, mail, password) VALUES (%s, %s, %s)",
+            (nombre, mail, password)
+        )
+
+        conexion.commit()
+        conexion.close()
+
+        return redirect("/usuarios_mysql")
+
+    return render_template("agregar_usuario_mysql.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

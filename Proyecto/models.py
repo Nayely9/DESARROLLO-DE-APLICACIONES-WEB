@@ -1,3 +1,5 @@
+from flask_login import UserMixin
+
 class Medicamento:
     def __init__(self, id, nombre, cantidad, precio, proveedor):
         self._id = id
@@ -6,7 +8,6 @@ class Medicamento:
         self._precio = precio
         self._proveedor = proveedor
 
-    # GETTERS
     def get_id(self):
         return self._id
 
@@ -22,7 +23,6 @@ class Medicamento:
     def get_proveedor(self):
         return self._proveedor
 
-    # SETTERS
     def set_cantidad(self, cantidad):
         self._cantidad = cantidad
 
@@ -32,10 +32,7 @@ class Medicamento:
 
 class InventarioClinica:
     def __init__(self):
-        # Diccionario para búsqueda rápida por ID
         self.medicamentos = {}
-
-        # Conjunto para proveedores únicos
         self.proveedores = set()
 
     def cargar_desde_db(self, medicamentos_db):
@@ -54,7 +51,6 @@ class InventarioClinica:
             self.proveedores.add(m["proveedor"])
 
     def mostrar_todos(self):
-        # Devuelve una lista
         return list(self.medicamentos.values())
 
     def buscar_por_nombre(self, nombre):
@@ -64,5 +60,12 @@ class InventarioClinica:
         ]
 
     def obtener_ids(self):
-        # Devuelve una tupla
         return tuple(self.medicamentos.keys())
+
+
+class Usuario(UserMixin):
+    def __init__(self, id_usuario, nombre, email, password):
+        self.id = id_usuario
+        self.nombre = nombre
+        self.email = email
+        self.password = password

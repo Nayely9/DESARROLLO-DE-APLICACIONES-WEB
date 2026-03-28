@@ -2,13 +2,9 @@
 
 {% block content %}
 
-<h2>Usuarios (MySQL)</h2>
+<h2>Usuarios</h2>
 
-<a href="/agregar_usuario">Agregar Usuario</a>
-
-<br><br>
-
-<table border="1">
+<table class="table table-striped">
 <tr>
 <th>ID</th>
 <th>Nombre</th>
@@ -17,9 +13,9 @@
 
 {% for u in usuarios %}
 <tr>
-<td>{{u.id_usuario}}</td>
-<td>{{u.nombre}}</td>
-<td>{{u.mail}}</td>
+<td>{{ u.id_usuario }}</td>
+<td>{{ u.nombre }}</td>
+<td>{{ u.email }}</td>
 </tr>
 {% endfor %}
 

@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Clínica - Sistema de Gestión</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <title>Clínica NY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        header { background: #0a2b5c; color: white; padding: 20px; text-align: center; }
+        .navbar { background: #1a1a1a !important; }
+    </style>
 </head>
 <body>
-
-<header>
-    <h1>Clínica - Sistema de Gestión</h1>
-</header>
-
-<nav>
-    <a href="/">Inicio</a>
-    <a href="/medicamentos">Medicamentos</a>
-    <a href="/agregar">Agregar Medicamento</a>
-    <a href="/ver_datos">Ver Datos</a>
-    <a href="/usuarios_mysql">Usuarios MySQL</a>
-    <a href="/about">Sobre Nosotros</a>
-    <a href="/login">Login</a>
-    <a href="/registro">Registro</a>
-    <a href="/panel">Panel</a>
-</nav>
-
-<main>
-    {% block content %}
-    {% endblock %}
-</main>
-
-<footer>
-    2026 Clínica
-</footer>
-
-</body>
-</html>
+    <header><h1>Sistema de Gestión Clínica - NY</h1></header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+<ul class="navbar-nav me-auto">
+    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Inicio</a></li>
+    {% if current_user.is_authenticated %}
+    <li class="nav-item"><a class="nav-link text-info" href="{{ url_for('productos') }}">Medicamentos</a></li>
+    <li class="nav-item"><a class="nav-link text-info" href="{{ url_for('pacientes') }}">Pacientes</a></li>
+    <li class="nav-item"><a class="nav-link text-info" href="{{ url_for('ver_asignaciones') }}">Entregas</a></li>
+    {% endif %}
+</ul>
+                <ul class="navbar-nav ms-auto">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link text-danger" href="{{ url_for('logout') }}">Salir</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('registro') }}">Registro</a></li>
+                    {% endif %}
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">{% block content %}{% endblock %}</div>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+        <div class="card-header text-white" style="background-color: #0a2b5c;">
+            <h4 class="mb-0">Registrar Nuevo Paciente</h4>
+        </div>
+        <div class="card-body">
+            <form action="{{ url_for('crear_paciente') }}" method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Nombre Completo</label>
+                    <input type="text" name="nombre" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Correo Electrónico</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <button type="submit" class="btn w-100 text-white" style="background-color: #0a2b5c;">Guardar Paciente</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

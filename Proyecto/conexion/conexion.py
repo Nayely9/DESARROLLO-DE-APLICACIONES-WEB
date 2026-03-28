@@ -1,11 +1,15 @@
 import mysql.connector
 
 def conectar_mysql():
-    conexion = mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="",
-        database="clinica",
-        port=3307
-    )
-    return conexion
+    try:
+        conexion = mysql.connector.connect(
+            host="127.0.0.1",
+            user="root",
+            password="",
+            database="gestion_clinica",
+            port=33060
+        )
+        return conexion
+    except Exception as e:
+        print(f"Error de conexión: {e}")
+        return None

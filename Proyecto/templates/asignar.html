@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow mx-auto" style="max-width: 600px;">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Nueva Entrega de Medicamentos</h4>
+    </div>
+    <div class="card-body">
+        <form action="{{ url_for('asignar') }}" method="POST">
+            <div class="mb-3">
+                <label>Seleccionar Medicamento</label>
+                <select name="m_id" class="form-select" required>
+                    {% for m in medicamentos %}
+                    <option value="{{ m.medicamento_id }}">{{ m.nombre }} (Stock: {{ m.stock }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>Seleccionar Paciente</label>
+                <select name="p_id" class="form-select" required>
+                    {% for p in pacientes %}
+                    <option value="{{ p.paciente_id }}">{{ p.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Cantidad</label>
+                    <input type="number" name="cant" class="form-control" required min="1">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Fecha</label>
+                    <input type="date" name="fecha" class="form-control" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Confirmar Entrega</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

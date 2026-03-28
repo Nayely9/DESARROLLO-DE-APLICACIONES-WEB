@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 style="color: #0a2b5c;">Historial de Entregas</h2>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">Descargar</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url_for('productos_csv') }}">CSV</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('productos_json') }}">JSON</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('productos_txt') }}">TXT</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('productos_pdf') }}">PDF Maestro</a></li>
+            </ul>
+            <a href="{{ url_for('asignar') }}" class="btn btn-primary ms-2">Nueva Entrega</a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Medicamento</th>
+                        <th>Paciente</th>
+                        <th>Cantidad</th>
+                        <th>Fecha de Entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in asignaciones %}
+                    <tr>
+                        <td>{{ e.medicamento }}</td>
+                        <td>{{ e.paciente }}</td>
+                        <td>{{ e.cantidad }}</td>
+                        <td>{{ e.fecha_asignacion }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center text-muted">No hay registros de entregas todavía.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
